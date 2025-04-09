@@ -14,27 +14,27 @@ from transformers import LlamaForCausalLM, PreTrainedTokenizerFast
 from transformers import BitsAndBytesConfig as TransformersBitsAndBytesConfig
 from diffusers import BitsAndBytesConfig as DiffusersBitsAndBytesConfig
 
-MODEL_PREFIX = "azaneko"
-LLAMA_MODEL_NAME = "hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4"
+MODEL_PREFIX = "hidream-ai"
+LLAMA_MODEL_NAME = "unsloth/Meta-Llama-3.1-8B-Instruct"
 
 # Model configurations
 MODEL_CONFIGS = {
     "dev": {
-        "path": f"{MODEL_PREFIX}/HiDream-I1-Dev-nf4",
+        "path": f"{MODEL_PREFIX}/HiDream-I1-Dev",
         "guidance_scale": 0.0,
         "num_inference_steps": 28,
         "shift": 6.0,
         "scheduler": FlashFlowMatchEulerDiscreteScheduler
     },
     "full": {
-        "path": f"{MODEL_PREFIX}/HiDream-I1-Full-nf4",
+        "path": f"{MODEL_PREFIX}/HiDream-I1-Full",
         "guidance_scale": 5.0,
         "num_inference_steps": 50,
         "shift": 3.0,
         "scheduler": FlowUniPCMultistepScheduler
     },
     "fast": {
-        "path": f"{MODEL_PREFIX}/HiDream-I1-Fast-nf4",
+        "path": f"{MODEL_PREFIX}/HiDream-I1-Fast",
         "guidance_scale": 0.0,
         "num_inference_steps": 16,
         "shift": 3.0,
